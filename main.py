@@ -132,6 +132,7 @@ SETTINGS_BACK_BUTTON = Button_Pic(
     hovering_color=(0, 0, 205)
 )
 
+
 ## FUNCTIONS FOR GAME PAGE
 
 def draw_window(red, yellow, yellow_bullets, red_bullets, red_health, yellow_health):
@@ -165,6 +166,7 @@ def yellow_spaceship_movement(keys_pressed, yellow):
         yellow.y = yellow.y + (-SPACESHIP_VELOCITY)
     if keys_pressed[pygame.K_s] and yellow.y + SPACESHIP_VELOCITY + SPACESHIP_HEIGHT < WINDOW_SIZE[1] - 15:  # down
         yellow.y = yellow.y + SPACESHIP_VELOCITY
+
 
 def red_spaceship_movement(keys_pressed, red):
     if keys_pressed[pygame.K_LEFT] and red.x - SPACESHIP_VELOCITY > BORDER.x + BORDER.width:
@@ -297,6 +299,7 @@ def game_function():
 
     pygame.quit()
 
+
 ## SETTINGS PAGE FUNCTION
 
 def settings_function():
@@ -321,6 +324,7 @@ def settings_function():
                     main_menu_function()
 
         pygame.display.update()
+
 
 ## MAIN MENU PAGE FUNCTION
 
