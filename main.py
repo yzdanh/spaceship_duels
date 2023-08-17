@@ -13,9 +13,10 @@ pygame.mixer.init()
 ## VARIABLES FOR GAME PAGE:
 
 WINDOW_SIZE = (1280, 720)
+HALF_WINDOW_SIZE = (WINDOW_SIZE[0] / 2, WINDOW_SIZE[1] / 2)
 WINDOW = pygame.display.set_mode(WINDOW_SIZE)
 
-BORDER = pygame.Rect(1280 / 2 - 10 / 2, 0, 10, 720)
+BORDER = pygame.Rect(HALF_WINDOW_SIZE[0] - 10 / 2, 0, 10, WINDOW_SIZE[1])
 
 pygame.display.set_caption("Spaceship Duels")
 PAUSE_TEXT_FONT = pygame.font.SysFont('arialblack', 50)
@@ -203,8 +204,8 @@ def make_pause_true():
 
 def draw_winner(text):
     draw_text = WINNER_FONT.render(text, 1, FONT_COLOR)
-    WINDOW.blit(draw_text, (WINDOW_SIZE[0] / 2 - draw_text.get_width() /
-                            2, WINDOW_SIZE[1] / 2 - draw_text.get_height() / 2))
+    WINDOW.blit(draw_text, (HALF_WINDOW_SIZE[0] - draw_text.get_width() /
+                            2, HALF_WINDOW_SIZE[1] - draw_text.get_height() / 2))
     pygame.display.update()
     pygame.time.delay(50000)
 
